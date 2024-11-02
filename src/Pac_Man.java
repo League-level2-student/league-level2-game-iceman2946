@@ -10,7 +10,7 @@ public class Pac_Man extends GameObject {
 	}
 	void draw(Graphics g) {
 		g.setColor(Color.YELLOW);
-		//g.drawOval(x, y, width, height);
+		g.drawOval(x, y, width, height);
 		g.fillOval(x, y, width, height);
 	}
 	void up() {

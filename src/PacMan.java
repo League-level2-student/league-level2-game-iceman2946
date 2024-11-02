@@ -4,8 +4,8 @@ import javax.swing.JFrame;
 
 public class PacMan {
 	JFrame frame;
-	public static final int WIDTH= 577;
-	public static final int HEIGHT= 859;
+	public static final int WIDTH= 960;
+	public static final int HEIGHT= 855;
 	GamePanel panel;
 	PacMan(){
 		frame= new JFrame();
