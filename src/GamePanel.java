@@ -6,13 +6,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class GamePanel extends JPanel implements ActionListener,KeyListener{
+public class GamePanel extends JPanel implements ActionListener,KeyListener,MouseListener{
 	final int MENU = 0;
 	final int GAME = 1;
 	final int LOSE = 2;
@@ -25,7 +27,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener{
 	public static boolean gotImage=false;
 	public static boolean needImage=true;
 	GamePanel(){
-		font= new Font("Roboto",Font.BOLD,30);
+		font= new Font("Lucida Bright",Font.BOLD,30);
 		frameDraw= new Timer(1000/60,this);
 		frameDraw.start();
 		pacMan= new Pac_Man(200,700,20,20);
@@ -65,7 +67,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener{
 		g.fillRect(0,0,PacMan.WIDTH,PacMan.HEIGHT);
 		g.setColor(Color.ORANGE);
 		g.setFont(font);
-		g.drawString("PAC - MAN", 300, 400);
+		g.drawString("PAC - MAN", 300, 200);
 		g.drawString("Press ENTER to play!",250 , 600);
 	}
 	void drawGameState(Graphics g) {
@@ -156,6 +158,36 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener{
 			updateLoseState();
 		}
 		repaint();
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		System.out.println(e.getX()+" , "+e.getY());
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 }
