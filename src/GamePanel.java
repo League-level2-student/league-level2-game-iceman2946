@@ -23,6 +23,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	Font font;
 	Timer frameDraw;
 	Pac_Man pacMan;
+	ObjectManager object;
 	public static BufferedImage image;
 	public static boolean gotImage=false;
 	public static boolean needImage=true;
@@ -31,7 +32,8 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		frameDraw= new Timer(1000/60,this);
 		frameDraw.start();
 		pacMan= new Pac_Man(200,700,20,20);
-		loadImage("pacman board.png");
+		object= new ObjectManager(pacMan);
+		//loadImage("pacman board.png");
 	}
 	
 	@Override
@@ -79,6 +81,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 			g.setColor(Color.BLACK);
 			g.fillRect(0, 0, PacMan.WIDTH, PacMan.HEIGHT);
 	   }
+	    object.draw(g);
 		pacMan.draw(g);
 	}
 	void drawLoseState(Graphics g) {
@@ -87,17 +90,17 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	void drawWinState(Graphics g) {
 		
 	}
-	void loadImage(String imageFile) {
-		if(needImage) {
-			try {
-				image= ImageIO.read(this.getClass().getResourceAsStream(imageFile));
-				gotImage=true;
-			} catch(Exception e) {
-				
-			}
-			needImage=false;
-		}
-	}
+//	void loadImage(String imageFile) {
+//		if(needImage) {
+//			try {
+//				image= ImageIO.read(this.getClass().getResourceAsStream(imageFile));
+//				gotImage=true;
+//			} catch(Exception e) {
+//				
+//			}
+//			needImage=false;
+//		}
+//	}
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {

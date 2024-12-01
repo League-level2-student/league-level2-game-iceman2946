@@ -1,3 +1,4 @@
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -6,11 +7,31 @@ public class ObjectManager {
 	ArrayList <Alien> aliens;
 	ArrayList <Bit> bits;
 	Random random;
+	int [][] tilesinCoding = {
+			{ 0,0,0,1,0,0},
+			{ 1,1,0,0,0,0},
+			{ 1,0,1,0,0,1},
+			{ 1,1,0,1,0,0},
+			{ 1,0,0,1,1,0},
+			{ 1,0,0,1,0,0},
+	};
+	Tile [][] tiles;
+	
+	
+	
+	
+	
 	ObjectManager(Pac_Man pacMan){
 		this.pacMan=pacMan;
 		aliens= new ArrayList<Alien>();
 		bits= new ArrayList<Bit>();
 		random= new Random();
+		tiles= new Tile [tilesinCoding.length][tilesinCoding.length];
+		for(int i=0; i< tilesinCoding.length; i++) {
+			for(int x=0; x<tilesinCoding[i].length; x++) {
+				tiles[i][x]= new Tile(i,x,tilesinCoding[i][x]);
+			}
+		}
 	}
 	void addBits(Bit b) {
 		bits.add(b);
@@ -31,6 +52,13 @@ public class ObjectManager {
 			}
 			else if(i==3) {
 				aliens.get(i).color="BLUE";
+			}
+		}
+	}
+	public void draw(Graphics g) {
+		for(int i=0; i< tiles.length; i++) {
+			for(int x=0; x < tiles[i].length; x++) {
+				tiles[i][x].draw(g);
 			}
 		}
 	}
