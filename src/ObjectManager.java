@@ -8,12 +8,17 @@ public class ObjectManager {
 	ArrayList <Bit> bits;
 	Random random;
 	int [][] tilesinCoding = {
-			{ 0,0,0,1,0,0},
-			{ 1,1,0,0,0,0},
-			{ 1,0,1,0,0,1},
-			{ 1,1,0,1,0,0},
-			{ 1,0,0,1,1,0},
-			{ 1,0,0,1,0,0},
+			{ 0,0,0,1,0,0,0,0,0,0},
+			{ 1,1,0,0,0,0,0,0,0,0},
+			{ 1,0,0,0,0,1,0,0,0,0},
+			{ 1,1,0,1,0,0,0,0,0,0},
+			{ 1,0,0,1,0,0,0,0,0,0},
+			{ 1,0,0,1,0,0,0,0,0,0},
+			{ 0,0,0,1,0,0,0,0,0,0},
+			{ 0,0,0,1,0,0,0,0,0,0},
+			{ 0,0,0,1,0,0,0,0,0,0},
+			{ 0,0,0,1,0,0,0,0,0,0},
+			{ 0,0,0,1,0,0,0,0,0,0,}
 	};
 	Tile [][] tiles;
 	
@@ -26,7 +31,7 @@ public class ObjectManager {
 		aliens= new ArrayList<Alien>();
 		bits= new ArrayList<Bit>();
 		random= new Random();
-		tiles= new Tile [tilesinCoding.length][tilesinCoding.length];
+		tiles= new Tile [tilesinCoding.length][tilesinCoding[0].length];
 		for(int i=0; i< tilesinCoding.length; i++) {
 			for(int x=0; x<tilesinCoding[i].length; x++) {
 				tiles[i][x]= new Tile(i,x,tilesinCoding[i][x]);
