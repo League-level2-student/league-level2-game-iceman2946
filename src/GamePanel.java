@@ -27,9 +27,10 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	public static BufferedImage image;
 	public static boolean gotImage=false;
 	public static boolean needImage=true;
+	int frameCount = 0;
 	GamePanel(){
 		font= new Font("Lucida Bright",Font.BOLD,30);
-		frameDraw= new Timer(1000/60,this);
+		frameDraw= new Timer(1000/30,this);
 		frameDraw.start();
 		pacMan= new Pac_Man(200,700,20,20);
 		object= new ObjectManager(pacMan);
@@ -55,7 +56,13 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		
 	}
 	void updateGameState() {
+		
+		if(frameCount==3) {
 		pacMan.update();
+		frameCount = 0;
+		}else {
+			frameCount++;
+		}
 		
 	}
 	void updateLoseState() {

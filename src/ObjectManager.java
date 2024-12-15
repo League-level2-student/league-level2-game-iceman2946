@@ -8,9 +8,9 @@ public class ObjectManager {
 	ArrayList <Bit> bits;
 	Random random;
 	int [][] tilesinCoding = {
-			{ 0,0,0,1,0,0,0,0,0,0},
+			{ 0,0,0,0,0,0,0,0,0,0},
 			{ 1,1,0,0,0,0,0,0,0,0},
-			{ 1,0,0,0,0,1,0,0,0,0},
+			{ 1,0,0,1,0,0,0,0,0,0},
 			{ 1,1,0,1,0,0,0,0,0,0},
 			{ 1,0,0,1,0,0,0,0,0,0},
 			{ 1,0,0,1,0,0,0,0,0,0},
@@ -18,7 +18,8 @@ public class ObjectManager {
 			{ 0,0,0,1,0,0,0,0,0,0},
 			{ 0,0,0,1,0,0,0,0,0,0},
 			{ 0,0,0,1,0,0,0,0,0,0},
-			{ 0,0,0,1,0,0,0,0,0,0,}
+			{ 0,0,0,1,0,0,0,0,0,0},
+			{ 0,0,0,1,0,0,0,0,0,0}
 	};
 	Tile [][] tiles;
 	
@@ -27,6 +28,8 @@ public class ObjectManager {
 	
 	
 	ObjectManager(Pac_Man pacMan){
+		System.out.println("Rows: tilesinCoding.length = " + tilesinCoding.length);
+		System.out.println("Cols: tilesinCoding[0].length = " + tilesinCoding[0].length);
 		this.pacMan=pacMan;
 		aliens= new ArrayList<Alien>();
 		bits= new ArrayList<Bit>();
