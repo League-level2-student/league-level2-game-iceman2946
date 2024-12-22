@@ -24,7 +24,7 @@ public class Tile {
 		//g.drawRect(column * 50, row * 50, 50, 50);
 		if(isBlocked) {
 			g.setColor(Color.blue);
-			g.fillRect(column * 50, row * 50, 50, 50);
+			g.fillRect(column * 50, row * 50, 50,50);;
 		}
 	}
 	
