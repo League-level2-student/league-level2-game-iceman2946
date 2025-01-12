@@ -10,7 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
-import javax.imageio.ImageIO;
+
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
