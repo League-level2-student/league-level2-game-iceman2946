@@ -123,19 +123,19 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 			System.out.println("current state is : " + currentState);
 		}
 		if(arg0.getKeyCode()==KeyEvent.VK_UP) {
-			pacMan.direction=1;
+			pacMan.setDirection(1);
 			System.out.println("UP");
 		}
 		else if(arg0.getKeyCode()==KeyEvent.VK_DOWN) {
-			pacMan.direction=2;
+			pacMan.setDirection(2);
 			System.out.println("DOWN");
 		}
 		else if(arg0.getKeyCode()==KeyEvent.VK_RIGHT) {
-			pacMan.direction=3;
+			pacMan.setDirection(3);
 			System.out.println("RIGHT");
 		}
 		else if(arg0.getKeyCode()==KeyEvent.VK_LEFT) {
-			pacMan.direction=4;
+			pacMan.setDirection(4);
 			System.out.println("LEFT");
 		}
 		

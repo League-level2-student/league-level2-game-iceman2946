@@ -19,28 +19,39 @@ public class Pac_Man extends GameObject {
 	void up() {
 		//y-=speed;
 		if(row>0) {
-			row--;
+			if(ObjectManager.tilesinCoding[row-1][column]==0) {
+				row --;
+			}
+
 		}
 	}
 	void down() {
 		//y+=speed;
-		if(row<17) {
-			row++;
+		if(row<ObjectManager.tilesinCoding.length-1) {
+			if(ObjectManager.tilesinCoding[row+1][column]==0) {
+				row ++;
+			}
 		}
 	}
 	void right() {
 		//x+=speed;
-		if(column<37) {
-			column++;
+		if(column<ObjectManager.tilesinCoding[0].length-1) {
+			if(ObjectManager.tilesinCoding[row][column+1]==0) {
+				column ++;
+			}
 		}
 	}
 	void left() {
 		if(column>0) {
-			column--;
+			if(ObjectManager.tilesinCoding[row][column-1]==0) {
+				column --;
+			}
 		}
 	}
 	void update() {
 		if(direction==1) {
+			
+			
 			up();
 		}
 		else if(direction==2) {
@@ -52,6 +63,38 @@ public class Pac_Man extends GameObject {
 		else if(direction==4) {
 			left();
 		}
+	}
+	public void setDirection(int i) {
+		if(i==1) {
+			if(row>0) {
+				if(ObjectManager.tilesinCoding[row-1][column]==0) {	
+					direction=1;
+				}
+			}
+		}
+		if(i==2) {
+			if(row<ObjectManager.tilesinCoding.length-1) {
+				if(ObjectManager.tilesinCoding[row+1][column]==0) {	
+					direction=2;
+				}
+			}
+		}
+		if(i==3) {
+			if(column<ObjectManager.tilesinCoding[0].length-1) {
+				if(ObjectManager.tilesinCoding[row][column+1]==0) {	
+					direction=3;
+				}
+			}
+		}
+		if(i==4) {
+			if(column>0) {
+				if(ObjectManager.tilesinCoding[row][column-1]==0) {	
+					direction=4;
+				}
+			}
+		}
+		
+		
 	}
 
 }

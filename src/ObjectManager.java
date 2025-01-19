@@ -7,9 +7,9 @@ public class ObjectManager {
 	ArrayList <Alien> aliens;
 	ArrayList <Bit> bits;
 	Random random;
-	int [][] tilesinCoding = {
-			{ 0,0,0,0,0,0,0,0,0,0,0,0,1},
-			{ 1,1,1,0,0,0,0,0,0,0,0,0,0},
+	static int [][] tilesinCoding = {
+			{ 0,0,0,0,1,0,0,0,0,0,0,0,1},
+			{ 1,1,1,0,0,0,0,2,2,2,2,0,0},
 			{ 1,0,0,0,1,0,0,0,0,0,0,0,0},
 			{ 1,1,1,0,1,0,0,0,0,0,0,0,0},
 			{ 1,0,0,0,1,0,0,0,0,0,0,0,0},
@@ -77,5 +77,6 @@ public class ObjectManager {
 			}
 		}
 	}
+	
 
 }

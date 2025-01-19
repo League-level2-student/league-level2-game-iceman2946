@@ -26,6 +26,10 @@ public class Tile {
 		if(isBlocked && tileType==1) {
 			g.setColor(Color.blue);
 			g.fillRoundRect(column * 50, row * 50, 50, 50, 10, 10);
+			}
+		if(isBlocked && tileType==2) {
+			g.setColor(Color.blue);
+			g.fillRect(column * 50, row * 50 + 46, 50, 4);
 		}
 	}
 	
