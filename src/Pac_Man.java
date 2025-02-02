@@ -9,8 +9,8 @@ public class Pac_Man extends GameObject {
 	Pac_Man(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		this.speed=5;
-		row=0;
-		column=0;
+		row=17;
+		column=20;
 	}
 	void draw(Graphics g) {
 		g.setColor(Color.YELLOW);

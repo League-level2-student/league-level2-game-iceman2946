@@ -29,7 +29,11 @@ public class Tile {
 			}
 		if(isBlocked && tileType==2) {
 			g.setColor(Color.blue);
-			g.fillRect(column * 50, row * 50 + 46, 50, 4);
+			g.fillRect(column * 50, row * 50, 50, 50);
+		}
+		if(isBlocked && tileType ==3) {
+			g.setColor(Color.BLACK);
+			g.fillRect(column * 50, row * 50, 50, 50);
 		}
 	}
 	
