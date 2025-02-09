@@ -6,6 +6,7 @@ public class ObjectManager {
 	Pac_Man pacMan;
 	ArrayList <Alien> aliens;
 	Random random;
+	int score;
 	static int [][] tilesinCoding = {
 			{ 0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0},
 			{ 1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0},
@@ -72,6 +73,14 @@ public class ObjectManager {
 			}
 		}
 	}
-	
-
+	void score(Graphics g) {
+		for(int i=0; i< tilesinCoding.length; i++) {
+			for(int x=0; x<tilesinCoding[i].length; x++) {
+				if(tiles[i][x].tileType==0) {
+					score +=1;
+				}
+			}
+		}
+	}
 }
+	

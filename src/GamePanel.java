@@ -10,7 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
-
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -25,13 +25,13 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	Pac_Man pacMan;
 	ObjectManager object;
 	int frameCount = 0;
+	public JLabel counter;
 	GamePanel(){
 		font= new Font("Lucida Bright",Font.BOLD,30);
 		frameDraw= new Timer(1000/30,this);
 		frameDraw.start();
 		pacMan= new Pac_Man(200,700,20,20);
 		object= new ObjectManager(pacMan);
-		//loadImage("pacman board.png");
 	}
 	
 	@Override
@@ -53,14 +53,13 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		
 	}
 	void updateGameState() {
-		
 		if(frameCount==3) {
 		pacMan.update();
 		frameCount = 0;
 		}else {
 			frameCount++;
 		}
-		
+		counter = new JLabel("Score = "+object.score);
 	}
 	void updateLoseState() {
 		
