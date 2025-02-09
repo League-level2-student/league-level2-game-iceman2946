@@ -23,6 +23,9 @@ public class Tile {
 	public void draw(Graphics g) {
 		g.setColor(Color.white);
 		//g.drawRect(column * 50, row * 50, 50, 50);
+		if (tileType == 0) {
+			new PacDots(row,column,g);
+		}
 		if(isBlocked && tileType==1) {
 			g.setColor(Color.blue);
 			g.fillRoundRect(column * 50, row * 50, 50, 50, 10, 10);
@@ -36,6 +39,7 @@ public class Tile {
 			g.fillRect(column * 50, row * 50, 50, 50);
 		}
 	}
+
 	
 	
 }

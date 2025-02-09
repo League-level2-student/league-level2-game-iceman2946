@@ -24,9 +24,6 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	Timer frameDraw;
 	Pac_Man pacMan;
 	ObjectManager object;
-	public static BufferedImage image;
-	public static boolean gotImage=false;
-	public static boolean needImage=true;
 	int frameCount = 0;
 	GamePanel(){
 		font= new Font("Lucida Bright",Font.BOLD,30);
@@ -80,14 +77,8 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.drawString("Press ENTER to play!",250 , 600);
 	}
 	void drawGameState(Graphics g) {
-	   if(gotImage) {
-		   g.drawImage(image,0, 0, PacMan.WIDTH, PacMan.HEIGHT, null);
-	   }
-		
-		else {
-			g.setColor(Color.BLACK);
-			g.fillRect(0, 0, PacMan.WIDTH, PacMan.HEIGHT);
-	   }
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, PacMan.WIDTH, PacMan.HEIGHT);
 	    object.draw(g);
 		pacMan.draw(g);
 	}

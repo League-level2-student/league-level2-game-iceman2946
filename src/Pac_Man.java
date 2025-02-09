@@ -50,8 +50,6 @@ public class Pac_Man extends GameObject {
 	}
 	void update() {
 		if(direction==1) {
-			
-			
 			up();
 		}
 		else if(direction==2) {

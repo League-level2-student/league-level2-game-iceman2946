@@ -5,7 +5,6 @@ import java.util.Random;
 public class ObjectManager {
 	Pac_Man pacMan;
 	ArrayList <Alien> aliens;
-	ArrayList <Bit> bits;
 	Random random;
 	static int [][] tilesinCoding = {
 			{ 0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0},
@@ -15,8 +14,8 @@ public class ObjectManager {
 			{ 1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0},
 			{ 1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0},
 			{ 0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0},
-			{ 0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1},
-			{ 0,0,1,0,1,2,2,2,2,2,0,1,0,0,0,0,1,3,3,3,3,1},
+			{ 0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,3,3,3,3,1},
+			{ 0,0,1,0,1,0,2,2,2,2,2,1,0,0,0,0,1,3,3,3,3,1},
 			{ 0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,3,3,3,3,1},
 			{ 0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1},
 			{ 0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0},
@@ -38,7 +37,6 @@ public class ObjectManager {
 		System.out.println("Cols: tilesinCoding[0].length = " + tilesinCoding[0].length);
 		this.pacMan=pacMan;
 		aliens= new ArrayList<Alien>();
-		bits= new ArrayList<Bit>();
 		random= new Random();
 		tiles= new Tile [tilesinCoding.length][tilesinCoding[0].length];
 		for(int i=0; i< tilesinCoding.length; i++) {
@@ -47,9 +45,7 @@ public class ObjectManager {
 			}
 		}
 	}
-	void addBits(Bit b) {
-		bits.add(b);
-	}
+
 	void addAlien() {
 		aliens.add(new Alien(416,422,10,10));
 	}
