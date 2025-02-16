@@ -6,6 +6,7 @@ public class Tile {
 	int column;
 	int tileType;
 	boolean isBlocked= false;
+	PacDots pacdot;
 	Tile(int row, int column, int tileType) {
 		this.row=row;
 		this.column=column;
@@ -24,7 +25,7 @@ public class Tile {
 		g.setColor(Color.white);
 		//g.drawRect(column * 50, row * 50, 50, 50);
 		if (tileType == 0) {
-			new PacDots(row,column,g);
+			pacdot = new PacDots(row,column,g);
 		}
 		if(isBlocked && tileType==1) {
 			g.setColor(Color.blue);
@@ -37,6 +38,10 @@ public class Tile {
 		if(isBlocked && tileType ==3) {
 			g.setColor(Color.BLACK);
 			g.fillRect(column * 50, row * 50, 50, 50);
+		}
+		if(tileType == 4) {
+			g.setColor(Color.BLACK);
+			g.drawRect(column * 50, row * 50, 50, 50);
 		}
 	}
 

@@ -59,7 +59,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		}else {
 			frameCount++;
 		}
-		counter = new JLabel("Score = "+object.score);
+		
 	}
 	void updateLoseState() {
 		
@@ -80,6 +80,8 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.fillRect(0, 0, PacMan.WIDTH, PacMan.HEIGHT);
 	    object.draw(g);
 		pacMan.draw(g);
+		g.setColor(Color.BLUE);
+		g.drawString("Score: "+object.score, 948, 439);
 	}
 	void drawLoseState(Graphics g) {
 		
