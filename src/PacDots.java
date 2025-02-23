@@ -10,7 +10,7 @@ public class PacDots {
 		draw(g);
 	}
 	void draw(Graphics g) {
-		g.setColor(Color.YELLOW);
+		g.setColor(Color.orange);
 		g.fillOval(column * 50 + 19, row * 50 + 19, 12, 12);
 	}
 	void remove(Graphics g) {

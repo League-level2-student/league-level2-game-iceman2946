@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	int frameCount = 0;
 	public JLabel counter;
 	GamePanel(){
-		font= new Font("Lucida Bright",Font.BOLD,30);
+		font= new Font("Itemone",Font.BOLD,30);
 		frameDraw= new Timer(1000/30,this);
 		frameDraw.start();
 		pacMan= new Pac_Man(200,700,20,20);

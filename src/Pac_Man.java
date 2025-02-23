@@ -23,7 +23,7 @@ public class Pac_Man extends GameObject {
 				row --;
 				if(ObjectManager.tilesinCoding[row][column]==0) {
 					ObjectManager.tilesinCoding[row][column]=4;
-					ObjectManager.score+=1;
+					ObjectManager.score+=10;
 					ObjectManager.tiles[row][column].tileType=4;
 				}
 			}
@@ -37,7 +37,7 @@ public class Pac_Man extends GameObject {
 				row ++;
 				if(ObjectManager.tilesinCoding[row][column]==0) {
 					ObjectManager.tilesinCoding[row][column]= 4;
-					ObjectManager.score+=1;
+					ObjectManager.score+=10;
 					ObjectManager.tiles[row][column].tileType=4;
 				}
 			}
@@ -50,7 +50,7 @@ public class Pac_Man extends GameObject {
 				column ++;
 				if(ObjectManager.tilesinCoding[row][column]==0) {
 					ObjectManager.tilesinCoding[row][column]= 4;
-					ObjectManager.score+=1;
+					ObjectManager.score+=10;
 					ObjectManager.tiles[row][column].tileType= 4;
 				}
 			}
@@ -62,7 +62,7 @@ public class Pac_Man extends GameObject {
 				column --;
 				if(ObjectManager.tilesinCoding[row][column]==0) {
 					ObjectManager.tilesinCoding[row][column]= 4;
-					ObjectManager.score+=1;
+					ObjectManager.score+=10;
 					ObjectManager.tiles[row][column].tileType= 4; 
 				}
 				
