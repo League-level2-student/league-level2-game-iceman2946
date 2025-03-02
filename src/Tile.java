@@ -43,6 +43,10 @@ public class Tile {
 			g.setColor(Color.BLACK);
 			g.drawRect(column * 50, row * 50, 50, 50);
 		}
+		if(tileType == 5) {
+			g.setColor(Color.blue);
+			g.drawRect(column * 50 + 46, row * 50 + 46, 50, 50);
+		}
 	}
 
 	

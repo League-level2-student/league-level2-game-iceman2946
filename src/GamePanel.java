@@ -21,6 +21,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	final int WIN = 3;
 	int currentState = MENU;
 	Font font;
+	Font scoreFont;
 	Timer frameDraw;
 	Pac_Man pacMan;
 	ObjectManager object;
@@ -28,6 +29,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	public JLabel counter;
 	GamePanel(){
 		font= new Font("Itemone",Font.BOLD,30);
+		scoreFont = new Font("Itemone",Font.BOLD,40);
 		frameDraw= new Timer(1000/30,this);
 		frameDraw.start();
 		pacMan= new Pac_Man(200,700,20,20);
@@ -81,7 +83,8 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	    object.draw(g);
 		pacMan.draw(g);
 		g.setColor(Color.BLUE);
-		g.drawString("Score: "+object.score, 948, 439);
+		g.setFont(font);
+		g.drawString("Score: "+object.score, 875, 440);
 	}
 	void drawLoseState(Graphics g) {
 		
