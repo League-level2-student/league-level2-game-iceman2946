@@ -25,7 +25,8 @@ public class Tile {
 		g.setColor(Color.white);
 		//g.drawRect(column * 50, row * 50, 50, 50);
 		if (tileType == 0) {
-			pacdot = new PacDots(row,column,g);
+			pacdot = new PacDots(row,column);
+			pacdot.draw(g);
 		}
 		if(isBlocked && tileType==1) {
 			g.setColor(Color.blue);

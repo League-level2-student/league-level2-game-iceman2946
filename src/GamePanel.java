@@ -92,17 +92,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	void drawWinState(Graphics g) {
 		
 	}
-//	void loadImage(String imageFile) {
-//		if(needImage) {
-//			try {
-//				image= ImageIO.read(this.getClass().getResourceAsStream(imageFile));
-//				gotImage=true;
-//			} catch(Exception e) {
-//				
-//			}
-//			needImage=false;
-//		}
-//	}
+
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
