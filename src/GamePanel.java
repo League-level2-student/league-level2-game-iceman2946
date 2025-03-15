@@ -84,7 +84,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		pacMan.draw(g);
 		g.setColor(Color.BLUE);
 		g.setFont(font);
-		g.drawString("Score: "+object.score, 875, 440);
+		g.drawString("Score: "+object.score, 865, 440);
 	}
 	void drawLoseState(Graphics g) {
 		
