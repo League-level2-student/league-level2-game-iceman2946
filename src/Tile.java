@@ -1,16 +1,27 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Tile {
+import javax.swing.Timer;
+
+public class Tile implements ActionListener {
 	int row;
 	int column;
 	int tileType;
 	boolean isBlocked= false;
+	Timer timer; 
 	PacDots pacdot;
+	private Color color;
 	Tile(int row, int column, int tileType) {
 		this.row=row;
 		this.column=column;
 		this.tileType=tileType;
+		color = Color.RED;
+		if(tileType == 5) {
+			timer = new Timer(300,this);
+			timer.start();
+		}
 		if(tileType==0) {
 			isBlocked=false;
 		}
@@ -44,7 +55,30 @@ public class Tile {
 			g.setColor(Color.BLACK);
 			g.drawRect(column * 50, row * 50, 50, 50);
 		}
+		if(tileType == 5) {
 		
+			g.setColor(color);
+			g.fillOval(column * 50 + 12, row * 50 + 12, 26, 26);
+			
+			//g.setColor(Color.RED);
+			//g.fillOval(column * 50 + 13, row * 50 + 13, 25, 25);
+		}
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		if(tileType != 5) {
+			timer.stop();
+		}
+		else {
+			if(color == Color.RED) {
+				color = Color.BLACK;
+			}
+			else {
+				color = Color.RED;
+			}
+		}
 	}
 
 	
