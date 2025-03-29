@@ -31,6 +31,15 @@ public class Tile implements ActionListener {
 		else if(tileType==2) {
 			isBlocked=true;
 		}
+		else if(tileType==3) {
+			isBlocked=true;
+		}
+		else if(tileType==4) {
+			isBlocked=false;
+		}
+		else if(tileType==5) {
+			isBlocked=false;
+		}
 	}
 	public void draw(Graphics g) {
 		g.setColor(Color.white);
@@ -56,7 +65,6 @@ public class Tile implements ActionListener {
 			g.drawRect(column * 50, row * 50, 50, 50);
 		}
 		if(tileType == 5) {
-		
 			g.setColor(color);
 			g.fillOval(column * 50 + 12, row * 50 + 12, 26, 26);
 			

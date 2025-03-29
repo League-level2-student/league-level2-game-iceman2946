@@ -67,7 +67,9 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		
 	}
 	void updateWinState() {
-		
+		//if(ObjectManager.dotCount==0) {
+			//currentState = WIN;
+		//}
 	}
 	void drawMenuState(Graphics g) {
 		g.setColor(Color.BLACK);
@@ -90,7 +92,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		
 	}
 	void drawWinState(Graphics g) {
-		
+		//g.setColor(Color.BLACK);
 	}
 
 

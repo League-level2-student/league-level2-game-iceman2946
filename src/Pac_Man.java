@@ -107,33 +107,32 @@ public class Pac_Man extends GameObject {
 	public void setDirection(int i) {
 		if(i==1) {
 			if(row>0) {
-				if(ObjectManager.tilesinCoding[row-1][column]==0 || ObjectManager.tilesinCoding[row-1][column]==4 ) {	
+				if(ObjectManager.tilesinCoding[row-1][column]==0 || ObjectManager.tilesinCoding[row-1][column]==4 || ObjectManager.tilesinCoding[row-1][column]==5) {	
 					direction=1;
 				}
 			}
 		}
 		if(i==2) {
 			if(row<ObjectManager.tilesinCoding.length-1) {
-				if(ObjectManager.tilesinCoding[row+1][column]==0 || ObjectManager.tilesinCoding[row+1][column]==4)  {	
+				if(ObjectManager.tilesinCoding[row+1][column]==0 || ObjectManager.tilesinCoding[row+1][column]==4 || ObjectManager.tilesinCoding[row+1][column]==5)  {	
 					direction=2;
 				}
 			}
 		}
 		if(i==3) {
 			if(column<ObjectManager.tilesinCoding[0].length-1) {
-				if(ObjectManager.tilesinCoding[row][column+1]==0 || ObjectManager.tilesinCoding[row][column+1]==4) {	
+				if(ObjectManager.tilesinCoding[row][column+1]==0 || ObjectManager.tilesinCoding[row][column+1]==4 || ObjectManager.tilesinCoding[row][column+1]==5) {	
 					direction=3;
 				}
 			}
 		}
 		if(i==4) {
 			if(column>0) {
-				if(ObjectManager.tilesinCoding[row][column-1]==0 || ObjectManager.tilesinCoding[row][column-1]==4) {	
+				if(ObjectManager.tilesinCoding[row][column-1]==0 || ObjectManager.tilesinCoding[row][column-1]==4 || ObjectManager.tilesinCoding[row][column-1]==5) {	
 					direction=4;
 				}
 			}
 		}
-		
 		
 	}
 
