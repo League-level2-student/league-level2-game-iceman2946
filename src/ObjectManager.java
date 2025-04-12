@@ -43,7 +43,7 @@ public class ObjectManager {
 		for(int i=0; i< tilesinCoding.length; i++) {
 			for(int x=0; x<tilesinCoding[i].length; x++) {
 				tiles[i][x]= new Tile(i,x,tilesinCoding[i][x]);
-				if(tilesinCoding[i][x]==0) {
+				if(tilesinCoding[i][x]==0 || tilesinCoding[i][x]==5) {
 					dotCount+=1;
 				}
 			}

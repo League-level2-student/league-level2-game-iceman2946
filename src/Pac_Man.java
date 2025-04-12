@@ -24,10 +24,12 @@ public class Pac_Man extends GameObject {
 				if(ObjectManager.tilesinCoding[row][column]==0) {
 					ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.score+=10;
+					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType=4;
 				}
 				if(ObjectManager.tilesinCoding[row][column]==5) {
 					ObjectManager.tilesinCoding[row][column]=4;
+					ObjectManager.dotCount-=1;
 					ObjectManager.score+=20;
 					ObjectManager.tiles[row][column].tileType = 4;
 			}
@@ -44,11 +46,13 @@ public class Pac_Man extends GameObject {
 				if(ObjectManager.tilesinCoding[row][column]==0) {
 					ObjectManager.tilesinCoding[row][column]= 4;
 					ObjectManager.score+=10;
+					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType=4;
 				}
 				if(ObjectManager.tilesinCoding[row][column]==5) {
 					ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.score+=20;
+					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
 			}
 		 }
@@ -62,11 +66,13 @@ public class Pac_Man extends GameObject {
 				if(ObjectManager.tilesinCoding[row][column]==0) {
 					ObjectManager.tilesinCoding[row][column]= 4;
 					ObjectManager.score+=10;
+					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType= 4;
 				}
 				if(ObjectManager.tilesinCoding[row][column]==5) {
 					ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.score+=20;
+					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
 				}
 			}
@@ -79,11 +85,13 @@ public class Pac_Man extends GameObject {
 				if(ObjectManager.tilesinCoding[row][column]==0) {
 					ObjectManager.tilesinCoding[row][column]= 4;
 					ObjectManager.score+=10;
+					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType= 4; 
 				}
 				if(ObjectManager.tilesinCoding[row][column]==5) {
 					ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.score+=20;
+					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
 				}
 				

@@ -28,7 +28,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	int frameCount = 0;
 	public JLabel counter;
 	GamePanel(){
-		font= new Font("Itemone",Font.BOLD,30);
+		font= new Font("Fantasy",Font.BOLD,30);
 		scoreFont = new Font("Itemone",Font.BOLD,40);
 		frameDraw= new Timer(1000/30,this);
 		frameDraw.start();
@@ -61,15 +61,17 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		}else {
 			frameCount++;
 		}
+		if(ObjectManager.dotCount==0) {
+			currentState = WIN;
+		}
+		System.out.println(ObjectManager.dotCount);
 		
 	}
 	void updateLoseState() {
 		
 	}
 	void updateWinState() {
-		//if(ObjectManager.dotCount==0) {
-			//currentState = WIN;
-		//}
+		
 	}
 	void drawMenuState(Graphics g) {
 		g.setColor(Color.BLACK);
@@ -84,7 +86,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.fillRect(0, 0, PacMan.WIDTH, PacMan.HEIGHT);
 	    object.draw(g);
 		pacMan.draw(g);
-		g.setColor(Color.BLUE);
+		g.setColor(Color.BLUE);  
 		g.setFont(font);
 		g.drawString("Score: "+object.score, 865, 440);
 	}
@@ -92,7 +94,11 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		
 	}
 	void drawWinState(Graphics g) {
-		//g.setColor(Color.BLACK);
+		g.setColor(Color.GREEN);
+		g.fillRect(0, 0,PacMan.WIDTH, PacMan.HEIGHT);
+		g.setFont(font);
+		g.drawString("Congratuations!",300,200);
+		g.drawString("You got all of the coins and outlasted all of the aliens!", 250, 600);
 	}
 
 
@@ -111,19 +117,15 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		}
 		if(arg0.getKeyCode()==KeyEvent.VK_UP) {
 			pacMan.setDirection(1);
-			System.out.println("UP");
 		}
 		else if(arg0.getKeyCode()==KeyEvent.VK_DOWN) {
 			pacMan.setDirection(2);
-			System.out.println("DOWN");
 		}
 		else if(arg0.getKeyCode()==KeyEvent.VK_RIGHT) {
 			pacMan.setDirection(3);
-			System.out.println("RIGHT");
 		}
 		else if(arg0.getKeyCode()==KeyEvent.VK_LEFT) {
 			pacMan.setDirection(4);
-			System.out.println("LEFT");
 		}
 		
 	}
