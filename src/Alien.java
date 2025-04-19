@@ -2,18 +2,22 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Alien extends GameObject {
-	String color= "";
+	Color color;
 	int row;
 	int column;
-	Alien(int x, int y, int width, int height) {
+	Alien(int x, int y, int width, int height,int row, int column) {
 		super(x, y, width, height);
 		this.speed=2;
-		row = 9;
-		column = 19; 
+		this.row = row;
+		this.column = column; 
 	}
 	void draw(Graphics g) {
-		g.setColor(Color.getColor(color));
-		g.drawRoundRect(column * 50, row * 50, 50, 50, 10, 10);
+		g.setColor(color);
+		g.fillOval(column * 50, row * 50, width, height);
+	}
+	
+	public void setColor(Color color) {
+		this.color = color;
 	}
 	void update() {
 		super.update();

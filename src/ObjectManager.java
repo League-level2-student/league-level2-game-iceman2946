@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
@@ -38,6 +39,7 @@ public class ObjectManager {
 		System.out.println("Cols: tilesinCoding[0].length = " + tilesinCoding[0].length);
 		this.pacMan=pacMan;
 		aliens= new ArrayList<Alien>();
+		addAliens();
 		random= new Random();
 		tiles= new Tile [tilesinCoding.length][tilesinCoding[0].length];
 		for(int i=0; i< tilesinCoding.length; i++) {
@@ -50,22 +52,25 @@ public class ObjectManager {
 		}
 	}
 
-	//void addAlien(Graphics g) {
-		//
-	//}
+	void addAliens() {
+		for (int i = 0; i<4; i++) {
+			aliens.add(new Alien(942,457,50,50,9,17+i));
+		}
+		setAlienColor();
+	}
 	void setAlienColor() {
 		for(int i=0; i<4; i++) {
 			if(i==0) {
-				aliens.get(i).color="RED";
+				aliens.get(i).setColor(Color.red);
 			}
 			else if(i==1) {
-				aliens.get(i).color="YELLOW";
+				aliens.get(i).setColor(Color.YELLOW);
 			}
 			else if(i==2) {
-				aliens.get(i).color="GREEN";
+				aliens.get(i).setColor(Color.green);
 			}
 			else if(i==3) {
-				aliens.get(i).color="BLUE";
+				aliens.get(i).setColor(Color.pink);
 			}
 		}
 	}
@@ -74,6 +79,9 @@ public class ObjectManager {
 			for(int x=0; x < tiles[i].length; x++) {
 				tiles[i][x].draw(g);
 			}
+		}
+		for(int i = 0; i<4; i++) {
+			aliens.get(i).draw(g);
 		}
 		
 	}
