@@ -5,6 +5,7 @@ public class Alien extends GameObject {
 	Color color;
 	int row;
 	int column;
+	boolean immortalState = true; 
 	Alien(int x, int y, int width, int height,int row, int column) {
 		super(x, y, width, height);
 		this.speed=2;
