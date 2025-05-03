@@ -1,9 +1,12 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.Timer;
 
-public class ObjectManager {
+public class ObjectManager implements ActionListener {
 	Pac_Man pacMan;
 	ArrayList <Alien> aliens;
 	Random random;
@@ -30,8 +33,8 @@ public class ObjectManager {
 			{ 5,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,4,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,5}  
 	};
 	static Tile [][] tiles;
-	
-	
+	static boolean powerPelletActive = false;
+	Timer colorSwitch;
 	
 	
 	ObjectManager(Pac_Man pacMan) {
@@ -41,6 +44,8 @@ public class ObjectManager {
 		aliens= new ArrayList<Alien>();
 		addAliens();
 		random= new Random();
+		colorSwitch = new Timer(20000, this);
+		
 		tiles= new Tile [tilesinCoding.length][tilesinCoding[0].length];
 		for(int i=0; i< tilesinCoding.length; i++) {
 			for(int x=0; x<tilesinCoding[i].length; x++) {
@@ -72,7 +77,11 @@ public class ObjectManager {
 			else if(i==3) {
 				aliens.get(i).setColor(Color.pink);
 			}
+			if(powerPelletActive==true) {
+				changeAlienColor();
+			}
 		}
+		
 	}
 	public void draw(Graphics g) {
 		for(int i=0; i< tiles.length; i++) {
@@ -80,11 +89,27 @@ public class ObjectManager {
 				tiles[i][x].draw(g);
 			}
 		}
+		setAlienColor();
 		for(int i = 0; i<4; i++) {
 			aliens.get(i).draw(g);
 		}
 		
 	}
+	void changeAlienColor() {
+		for(int i = 0; i<4; i++) {
+			aliens.get(i).setColor(Color.BLUE);
+		}
+		colorSwitch.start();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		colorSwitch.stop();
+		powerPelletActive = false;
+		setAlienColor();
+		
+	}
+
 
 }
 	

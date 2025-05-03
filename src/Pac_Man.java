@@ -32,6 +32,7 @@ public class Pac_Man extends GameObject {
 					ObjectManager.dotCount-=1;
 					ObjectManager.score+=20;
 					ObjectManager.tiles[row][column].tileType = 4;
+					ObjectManager.powerPelletActive=true;
 			}
 
 			}
@@ -54,6 +55,7 @@ public class Pac_Man extends GameObject {
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
+					ObjectManager.powerPelletActive=true;
 			}
 		 }
 	  }
@@ -74,6 +76,7 @@ public class Pac_Man extends GameObject {
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
+					ObjectManager.powerPelletActive = true;
 				}
 			}
 		}
@@ -93,6 +96,7 @@ public class Pac_Man extends GameObject {
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
+					ObjectManager.powerPelletActive = true;
 				}
 				
 			}
