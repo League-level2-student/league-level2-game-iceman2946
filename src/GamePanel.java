@@ -25,7 +25,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	Timer frameDraw;
 	Pac_Man pacMan;
 	ObjectManager object;
-	int frameCount = 0;
+	static int frameCount = 0;
 	public JLabel counter;
 	GamePanel(){
 		font= new Font("Fantasy",Font.BOLD,30);
@@ -57,6 +57,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	void updateGameState() {
 		if(frameCount==3) {
 		pacMan.update();
+		object.update();
 		frameCount = 0;
 		}else {
 			frameCount++;
@@ -64,7 +65,6 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		if(ObjectManager.dotCount==0) {
 			currentState = WIN;
 		}
-		System.out.println(ObjectManager.dotCount);
 		
 	}
 	void updateLoseState() {

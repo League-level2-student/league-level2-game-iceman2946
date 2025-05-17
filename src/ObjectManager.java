@@ -8,7 +8,7 @@ import javax.swing.Timer;
 
 public class ObjectManager implements ActionListener {
 	Pac_Man pacMan;
-	ArrayList <Alien> aliens;
+	static ArrayList <Alien> aliens;
 	Random random;
 	static int dotCount = 0;
 	static int score;
@@ -107,6 +107,20 @@ public class ObjectManager implements ActionListener {
 		colorSwitch.stop();
 		powerPelletActive = false;
 		setAlienColor();
+		
+	}
+int alienCount = 0; 
+	public void update() {
+		alienCount+=1;
+		if(alienCount==6) {
+			alienCount=0;
+			for(int i=0; i<4; i++) {
+				aliens.get(i).changeDirection();
+			}
+		}
+		for(int i=0; i<4; i++) {
+			aliens.get(i).update();
+		}
 		
 	}
 
