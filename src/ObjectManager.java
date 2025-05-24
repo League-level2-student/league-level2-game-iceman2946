@@ -34,7 +34,8 @@ public class ObjectManager implements ActionListener {
 	};
 	static Tile [][] tiles;
 	static boolean powerPelletActive = false;
-	Timer colorSwitch;
+	static Timer colorSwitch;
+	Timer alienTimer; 
 	
 	
 	ObjectManager(Pac_Man pacMan) {
@@ -45,7 +46,7 @@ public class ObjectManager implements ActionListener {
 		addAliens();
 		random= new Random();
 		colorSwitch = new Timer(20000, this);
-		
+		alienTimer= new Timer(10000, this);
 		tiles= new Tile [tilesinCoding.length][tilesinCoding[0].length];
 		for(int i=0; i< tilesinCoding.length; i++) {
 			for(int x=0; x<tilesinCoding[i].length; x++) {
@@ -55,11 +56,15 @@ public class ObjectManager implements ActionListener {
 				}
 			}
 		}
+
+		alienTimer.setInitialDelay(0);
+		alienTimer.start();
 	}
 
 	void addAliens() {
 		for (int i = 0; i<4; i++) {
 			aliens.add(new Alien(942,457,50,50,9,17+i));
+			
 		}
 		setAlienColor();
 	}
@@ -101,12 +106,26 @@ public class ObjectManager implements ActionListener {
 		}
 		colorSwitch.start();
 	}
+	void releaseAliens() {
+		for(int i = 0; i<4; i++) {
+			if(aliens.get(i).inSpawn==true) {
+				aliens.get(i).inSpawn=false;
+				break;
+			}
+		}
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		colorSwitch.stop();
-		powerPelletActive = false;
-		setAlienColor();
+		if(e.getSource()==colorSwitch) {
+			colorSwitch.stop();
+			powerPelletActive = false;
+			setAlienColor();
+		}
+		else if(e.getSource()==alienTimer) {
+			releaseAliens();
+		}
+		
 		
 	}
 int alienCount = 0; 
@@ -115,7 +134,10 @@ int alienCount = 0;
 		if(alienCount==6) {
 			alienCount=0;
 			for(int i=0; i<4; i++) {
-				aliens.get(i).changeDirection();
+				if(new Random().nextBoolean()) {
+					aliens.get(i).changeDirection();
+				}
+				
 			}
 		}
 		for(int i=0; i<4; i++) {

@@ -96,9 +96,10 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	void drawWinState(Graphics g) {
 		g.setColor(Color.GREEN);
 		g.fillRect(0, 0,PacMan.WIDTH, PacMan.HEIGHT);
+		g.setColor(Color.blue);
 		g.setFont(font);
 		g.drawString("Congratuations!",300,200);
-		g.drawString("You got all of the coins and outlasted all of the aliens!", 250, 600);
+		g.drawString("You got all of the coins and outlasted all of the aliens!", 250, 400);
 	}
 
 

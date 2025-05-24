@@ -33,7 +33,10 @@ public class Pac_Man extends GameObject {
 					ObjectManager.score+=20;
 					ObjectManager.tiles[row][column].tileType = 4;
 					ObjectManager.powerPelletActive=true;
-			}
+					if(	ObjectManager.colorSwitch.isRunning()) {
+						ObjectManager.colorSwitch.restart();
+					}
+				}
 
 			}
 
@@ -56,9 +59,12 @@ public class Pac_Man extends GameObject {
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
 					ObjectManager.powerPelletActive=true;
+					if(	ObjectManager.colorSwitch.isRunning()) {
+						ObjectManager.colorSwitch.restart();
+					}
+				}
 			}
-		 }
-	  }
+		}
 	}
 	void right() {
 		//x+=speed;
@@ -77,6 +83,9 @@ public class Pac_Man extends GameObject {
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
 					ObjectManager.powerPelletActive = true;
+					if(	ObjectManager.colorSwitch.isRunning()) {
+						ObjectManager.colorSwitch.restart();
+					}
 				}
 			}
 		}
@@ -97,8 +106,11 @@ public class Pac_Man extends GameObject {
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
 					ObjectManager.powerPelletActive = true;
+					if(	ObjectManager.colorSwitch.isRunning()) {
+						ObjectManager.colorSwitch.restart();
+					}
 				}
-				
+
 			}
 		}
 	}
@@ -145,7 +157,7 @@ public class Pac_Man extends GameObject {
 				}
 			}
 		}
-		
+
 	}
 
 }
