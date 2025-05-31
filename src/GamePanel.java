@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class GamePanel extends JPanel implements ActionListener,KeyListener,MouseListener{
-	final int MENU = 0;
-	final int GAME = 1;
-	final int LOSE = 2;
-	final int WIN = 3;
-	int currentState = MENU;
+	static final int MENU = 0;
+	static final int GAME = 1;
+	static final int LOSE = 2;
+	static final int WIN = 3;
+	static int currentState = MENU;
 	Font font;
 	Font scoreFont;
 	Timer frameDraw;
@@ -56,9 +56,10 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	}
 	void updateGameState() {
 		if(frameCount==3) {
-		pacMan.update();
-		object.update();
-		frameCount = 0;
+			pacMan.update();
+			object.checkCollision();
+			object.update();
+		  	frameCount = 0;
 		}else {
 			frameCount++;
 		}

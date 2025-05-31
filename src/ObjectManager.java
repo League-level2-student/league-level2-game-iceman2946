@@ -114,6 +114,25 @@ public class ObjectManager implements ActionListener {
 			}
 		}
 	}
+	void checkCollision() {
+		for(int i=0; i<4; i++) {
+			if(aliens.get(i).row==pacMan.row && aliens.get(i).column==pacMan.column) {
+				if(aliens.get(i).color!=Color.BLUE) {
+					gameOver();
+				}
+				else {
+					aliens.get(i).reset();
+					score+=200;
+				}
+			}
+			
+		}
+	}
+
+	private void gameOver() {
+		GamePanel.currentState=GamePanel.LOSE;
+		
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

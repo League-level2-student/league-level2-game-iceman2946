@@ -6,6 +6,8 @@ public class Alien extends GameObject {
 	Color color;
 	int row;
 	int column;
+	final int startingRow; 
+	final int startingColumn;
 	boolean immortalState = true; 
 	int randomDirection = 0;
 	Random random;
@@ -16,6 +18,8 @@ public class Alien extends GameObject {
 		this.row = row;
 		this.column = column; 
 		random = new Random();
+		startingRow = row;
+		startingColumn= column; 
 	}
 	void draw(Graphics g) {
 		g.setColor(color);
@@ -32,6 +36,11 @@ public class Alien extends GameObject {
 		randomDirection= (int)random.nextInt(4);
 	}
 	
+	}
+	void reset() {
+		row = startingRow;
+		column= startingColumn;
+		inSpawn= true;
 	}
 	void update() {
 		if(inSpawn == false) {
