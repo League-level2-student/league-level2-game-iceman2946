@@ -1,9 +1,11 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
+import javax.swing.Timer;
+
 public class Pac_Man extends GameObject {
 	int direction=4;
-
+	Timer moveTimer;
 	int row;
 	int column; 
 	Pac_Man(int x, int y, int width, int height) {
@@ -11,6 +13,7 @@ public class Pac_Man extends GameObject {
 		this.speed=5;
 		row=17;
 		column=20;
+		//moveTimer = 
 	}
 	void draw(Graphics g) {
 		g.setColor(Color.YELLOW);

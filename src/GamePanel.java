@@ -56,8 +56,8 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	}
 	void updateGameState() {
 		if(frameCount==3) {
-			pacMan.update();
 			object.checkCollision();
+			pacMan.update();
 			object.update();
 		  	frameCount = 0;
 		}else {

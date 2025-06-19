@@ -12,6 +12,10 @@ public class Alien extends GameObject {
 	int randomDirection = 0;
 	Random random;
 	boolean inSpawn = true;
+	int up = 1;
+	int down =2;
+	int right = 3;
+	int left = 4; 
 	Alien(int x, int y, int width, int height,int row, int column) {
 		super(x, y, width, height);
 		this.speed=2;
