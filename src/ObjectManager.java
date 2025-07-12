@@ -101,7 +101,7 @@ public class ObjectManager implements ActionListener {
 			}
 		}
 
-	}
+	} 
 
 	public void draw(Graphics g) {
 		for (int i = 0; i < tiles.length; i++) {
@@ -145,7 +145,7 @@ public class ObjectManager implements ActionListener {
 				}
 			}
 			
-			if (pacMan.direction == 1) {// uo
+			if (pacMan.direction == 1) {// up
 				if (aliens.get(i).row == pacMan.row - 1 && aliens.get(i).column==pacMan.column) {
 					if (aliens.get(i).randomDirection == 1){
 						gameOver();
@@ -154,22 +154,22 @@ public class ObjectManager implements ActionListener {
 			}
 				
 		
-			if (pacMan.direction == 2) {// uo
-				if (aliens.get(i).row == pacMan.row - 1 && aliens.get(i).column==pacMan.column) {
+			if (pacMan.direction == 2) {// down
+				if (aliens.get(i).row == pacMan.row + 1 && aliens.get(i).column==pacMan.column) {
 					if (aliens.get(i).randomDirection == 0) {
 						gameOver();
 					}
 				}
 			}
 			if (pacMan.direction == 3) {// right
-				if (aliens.get(i).row == pacMan.row - 1 && aliens.get(i).column==pacMan.column) {
+				if (aliens.get(i).column == pacMan.column - 1 && aliens.get(i).row==pacMan.row) {
 					if (aliens.get(i).randomDirection == 2) {
 						gameOver();
 					}
 				}
 			}
-			if (pacMan.direction == 4) {// uo
-				if (aliens.get(i).row == pacMan.row - 1 && aliens.get(i).column==pacMan.column) {
+			if (pacMan.direction == 4) {// left
+				if (aliens.get(i).row == pacMan.row - 1 && aliens.get(i).row==pacMan.row) {
 					if (aliens.get(i).randomDirection == 3) {
 						gameOver();
 					}
