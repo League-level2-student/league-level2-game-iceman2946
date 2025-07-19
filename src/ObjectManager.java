@@ -13,12 +13,9 @@ public class ObjectManager implements ActionListener {
 	static int dotCount = 0;
 	static int score;
 	static int[][] tilesinCoding = {
-			{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-					0, 0, 0 },
-			{ 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
-					0, 1, 0 },
-			{ 1, 5, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-					0, 1, 0 },
+			{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+			{ 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
+			{ 1, 5, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0 },
 			{ 1, 1, 1, 0, 1, 2, 2, 2, 2, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1,
 					0, 1, 0 },
 			{ 1, 0, 0, 0, 1, 2, 2, 2, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
@@ -53,6 +50,7 @@ public class ObjectManager implements ActionListener {
 	static boolean powerPelletActive = false;
 	static Timer colorSwitch;
 	Timer alienTimer;
+	int lives = 3;  
 
 	ObjectManager(Pac_Man pacMan) {
 		System.out.println("Rows: tilesinCoding.length = " + tilesinCoding.length);
@@ -90,7 +88,7 @@ public class ObjectManager implements ActionListener {
 			if (i == 0) {
 				aliens.get(i).setColor(Color.red);
 			} else if (i == 1) {
-				aliens.get(i).setColor(Color.YELLOW);
+				aliens.get(i).setColor(Color.CYAN);
 			} else if (i == 2) {
 				aliens.get(i).setColor(Color.green);
 			} else if (i == 3) {
