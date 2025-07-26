@@ -90,6 +90,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.setColor(Color.BLUE);  
 		g.setFont(font);
 		g.drawString("Score: "+object.score, 865, 440);
+		g.drawString("Lives: "+object.lives, 922, 900);
 	}
 	void drawLoseState(Graphics g) {
 		g.setColor(Color.RED);

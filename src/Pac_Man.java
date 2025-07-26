@@ -7,7 +7,7 @@ public class Pac_Man extends GameObject {
 	int direction=4;
 	Timer moveTimer;
 	int row;
-	int column; 
+	int column;
 	Pac_Man(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		this.speed=5;
@@ -161,6 +161,10 @@ public class Pac_Man extends GameObject {
 			}
 		}
 
+	}
+	void reset() {
+		row = 17;
+		column= 20;
 	}
 
 }
