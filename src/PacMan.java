@@ -25,4 +25,4 @@ public class PacMan {
 		man.setup();
 	}
 }
-//MAYBE YOU SHOULD SIGN OUT NEXT TIME BUT ITS FINE ILL JUST BREAK IN AGAIN (your game is very cool and fun)
+

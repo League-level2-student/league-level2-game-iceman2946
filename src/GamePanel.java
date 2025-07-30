@@ -79,8 +79,8 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.fillRect(0,0,PacMan.WIDTH,PacMan.HEIGHT);
 		g.setColor(Color.ORANGE);
 		g.setFont(font);
-		g.drawString("PAC - MAN", 300, 200);
-		g.drawString("Press ENTER to play!",250 , 600);
+		g.drawString("PAC - MAN", 760, 215);
+		g.drawString("Press ENTER to play!",722 , 624);
 	}
 	void drawGameState(Graphics g) {
 		g.setColor(Color.BLACK);
@@ -97,15 +97,15 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.fillRect(0,0,PacMan.WIDTH,PacMan.HEIGHT);
 		g.setFont(font);
 		g.setColor(Color.BLACK);
-		g.drawString("YOU LOST!", 300, 200);
+		g.drawString("YOU LOST!", 760, 215);
 	}
 	void drawWinState(Graphics g) {
 		g.setColor(Color.GREEN);
 		g.fillRect(0, 0,PacMan.WIDTH, PacMan.HEIGHT);
 		g.setColor(Color.blue);
 		g.setFont(font);
-		g.drawString("Congratuations!",300,200);
-		g.drawString("You got all of the coins and outlasted all of the aliens!", 250, 400);
+		g.drawString("Congratuations!",760,215);
+		g.drawString("You got all of the coins and outlasted all of the aliens!", 468, 634);
 	}
 
 
