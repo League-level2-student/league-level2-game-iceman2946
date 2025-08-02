@@ -58,7 +58,6 @@ public class ObjectManager implements ActionListener {
 				}
 			}
 		}
-
 		alienTimer.setInitialDelay(0);
 		alienTimer.start();
 	}

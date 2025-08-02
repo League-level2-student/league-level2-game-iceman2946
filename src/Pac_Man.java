@@ -22,16 +22,16 @@ public class Pac_Man extends GameObject {
 	void up() {
 		//y-=speed;
 		if(row>0) {
-			if(ObjectManager.tilesinCoding[row-1][column]==0 || ObjectManager.tilesinCoding[row-1][column]==4 || ObjectManager.tilesinCoding[row-1][column]==5) {
+			if(ObjectManager.tiles[row-1][column].tileType==0 || ObjectManager.tiles[row-1][column].tileType==4 || ObjectManager.tiles[row-1][column].tileType==5) {
 				row --;
-				if(ObjectManager.tilesinCoding[row][column]==0) {
-					ObjectManager.tilesinCoding[row][column]=4;
+				if(ObjectManager.tiles[row][column].tileType==0) {
+					//ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.score+=10;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType=4;
 				}
-				if(ObjectManager.tilesinCoding[row][column]==5) {
-					ObjectManager.tilesinCoding[row][column]=4;
+				if(ObjectManager.tiles[row][column].tileType==5) {
+					//ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.dotCount-=1;
 					ObjectManager.score+=20;
 					ObjectManager.tiles[row][column].tileType = 4;
@@ -47,17 +47,17 @@ public class Pac_Man extends GameObject {
 	}
 	void down() {
 		//y+=speed;
-		if(row<ObjectManager.tilesinCoding.length-1) {
-			if(ObjectManager.tilesinCoding[row+1][column]==0 || ObjectManager.tilesinCoding[row+1][column]==4 || ObjectManager.tilesinCoding[row+1][column]==5) {
+		if(row<ObjectManager.tiles.length-1) {
+			if(ObjectManager.tiles[row+1][column].tileType==0 || ObjectManager.tiles[row+1][column].tileType==4 || ObjectManager.tiles[row+1][column].tileType==5) {
 				row ++;
-				if(ObjectManager.tilesinCoding[row][column]==0) {
-					ObjectManager.tilesinCoding[row][column]= 4;
+				if(ObjectManager.tiles[row][column].tileType==0) {
+					//ObjectManager.tilesinCoding[row][column]= 4;
 					ObjectManager.score+=10;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType=4;
 				}
-				if(ObjectManager.tilesinCoding[row][column]==5) {
-					ObjectManager.tilesinCoding[row][column]=4;
+				if(ObjectManager.tiles[row][column].tileType==5) {
+					//ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
@@ -71,17 +71,17 @@ public class Pac_Man extends GameObject {
 	}
 	void right() {
 		//x+=speed;
-		if(column<ObjectManager.tilesinCoding[0].length-1) {
-			if(ObjectManager.tilesinCoding[row][column+1]==0 || ObjectManager.tilesinCoding[row][column+1]==4 || ObjectManager.tilesinCoding[row][column+1]==5 ) {
+		if(column<ObjectManager.tiles[0].length-1) {
+			if(ObjectManager.tiles[row][column+1].tileType==0 || ObjectManager.tiles[row][column+1].tileType==4 || ObjectManager.tiles[row][column+1].tileType==5 ) {
 				column ++;
-				if(ObjectManager.tilesinCoding[row][column]==0) {
-					ObjectManager.tilesinCoding[row][column]= 4;
+				if(ObjectManager.tiles[row][column].tileType==0) {
+					//ObjectManager.tilesinCoding[row][column]= 4;
 					ObjectManager.score+=10;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType= 4;
 				}
-				if(ObjectManager.tilesinCoding[row][column]==5) {
-					ObjectManager.tilesinCoding[row][column]=4;
+				if(ObjectManager.tiles[row][column].tileType==5) {
+					//ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
@@ -95,16 +95,16 @@ public class Pac_Man extends GameObject {
 	}
 	void left() {
 		if(column>0) {
-			if(ObjectManager.tilesinCoding[row][column-1]==0 || ObjectManager.tilesinCoding[row][column-1]==4 || ObjectManager.tilesinCoding[row][column-1]==5) {
+			if(ObjectManager.tiles[row][column-1].tileType==0 || ObjectManager.tiles[row][column-1].tileType==4 || ObjectManager.tiles[row][column-1].tileType==5) {
 				column --;
-				if(ObjectManager.tilesinCoding[row][column]==0) {
-					ObjectManager.tilesinCoding[row][column]= 4;
+				if(ObjectManager.tiles[row][column].tileType==0) {
+					//ObjectManager.tilesinCoding[row][column]= 4;
 					ObjectManager.score+=10;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType= 4; 
 				}
-				if(ObjectManager.tilesinCoding[row][column]==5) {
-					ObjectManager.tilesinCoding[row][column]=4;
+				if(ObjectManager.tiles[row][column].tileType==5) {
+					//ObjectManager.tilesinCoding[row][column]=4;
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;

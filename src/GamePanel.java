@@ -140,9 +140,10 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	}
 
 	public void resetGame() {
-		pacMan = new Pac_Man(200,700,20,20);
+		pacMan = new Pac_Man(200,700,20,20);	
+		ObjectManager.dotCount=0;
 		object = new ObjectManager(pacMan);
-		
+	
 		
 	}
 
