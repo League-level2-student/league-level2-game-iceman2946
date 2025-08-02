@@ -36,7 +36,7 @@ public class ObjectManager implements ActionListener {
 	static boolean powerPelletActive = false;
 	static Timer colorSwitch;
 	Timer alienTimer;
-	int lives = 3;  
+	int lives;  
 
 	ObjectManager(Pac_Man pacMan) {
 		System.out.println("Rows: tilesinCoding.length = " + tilesinCoding.length);
@@ -47,6 +47,8 @@ public class ObjectManager implements ActionListener {
 		random = new Random();
 		colorSwitch = new Timer(20000, this);
 		alienTimer = new Timer(10000, this);
+		lives = 3;
+		score = 0; 
 		tiles = new Tile[tilesinCoding.length][tilesinCoding[0].length];
 		for (int i = 0; i < tilesinCoding.length; i++) {
 			for (int x = 0; x < tilesinCoding[i].length; x++) {
@@ -208,5 +210,7 @@ public class ObjectManager implements ActionListener {
 		}
 
 	}
+
+
 
 }

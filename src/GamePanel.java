@@ -98,6 +98,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.setFont(font);
 		g.setColor(Color.BLACK);
 		g.drawString("YOU LOST!", 760, 215);
+		g.drawString("You scored "+object.score+" points", 697, 507);
 	}
 	void drawWinState(Graphics g) {
 		g.setColor(Color.GREEN);
@@ -118,6 +119,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 			}
 			else if(currentState==WIN || currentState==LOSE) {
 				currentState=MENU;
+				resetGame();
 			}
 			
 			System.out.println("current state is : " + currentState);
@@ -134,6 +136,13 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		else if(arg0.getKeyCode()==KeyEvent.VK_LEFT) {
 			pacMan.setDirection(4);
 		}
+		
+	}
+
+	public void resetGame() {
+		pacMan = new Pac_Man(200,700,20,20);
+		object = new ObjectManager(pacMan);
+		
 		
 	}
 
