@@ -109,10 +109,12 @@ public class ObjectManager implements ActionListener {
 	}
 
 	void releaseAliens() {
-		for (int i = 0; i < 4; i++) {
-			if (aliens.get(i).inSpawn == true) {
-				aliens.get(i).inSpawn = false;
-				break;
+		if(GamePanel.currentState==GamePanel.GAME)	{
+			for (int i = 0; i < 4; i++) {
+				if (aliens.get(i).inSpawn == true) {
+					aliens.get(i).inSpawn = false;
+					break;
+				}
 			}
 		}
 	}
@@ -133,8 +135,16 @@ public class ObjectManager implements ActionListener {
 			if (pacMan.direction == 1) {// up
 				if (aliens.get(i).row == pacMan.row - 1 && aliens.get(i).column==pacMan.column) {
 					if (aliens.get(i).randomDirection == 1){
-						gameOver();
+						if (aliens.get(i).color != Color.BLUE) {
+							gameOver();
+						}
+
+						else {
+							aliens.get(i).reset();
+							score += 200;
+						}
 					}
+			
 				}
 			}
 				
@@ -142,21 +152,42 @@ public class ObjectManager implements ActionListener {
 			if (pacMan.direction == 2) {// down
 				if (aliens.get(i).row == pacMan.row + 1 && aliens.get(i).column==pacMan.column) {
 					if (aliens.get(i).randomDirection == 0) {
-						gameOver();
+						if (aliens.get(i).color != Color.BLUE) {
+							gameOver();
+						}
+
+						else {
+							aliens.get(i).reset();
+							score += 200;
+						}
 					}
 				}
 			}
 			if (pacMan.direction == 3) {// right
 				if (aliens.get(i).column == pacMan.column - 1 && aliens.get(i).row==pacMan.row) {
 					if (aliens.get(i).randomDirection == 2) {
-						gameOver();
+						if (aliens.get(i).color != Color.BLUE) {
+							gameOver();
+						}
+
+						else {
+							aliens.get(i).reset();
+							score += 200;
+						}
 					}
 				}
 			}
 			if (pacMan.direction == 4) {// left
 				if (aliens.get(i).row == pacMan.row - 1 && aliens.get(i).row==pacMan.row) {
 					if (aliens.get(i).randomDirection == 3) {
-						gameOver();
+						if (aliens.get(i).color != Color.BLUE) {
+							gameOver();
+						}
+
+						else {
+							aliens.get(i).reset();
+							score += 200;
+						}
 					}
 				}
 			}
@@ -193,20 +224,23 @@ public class ObjectManager implements ActionListener {
 	int alienCount = 0;
 
 	public void update() {
-		alienCount += 1;
-		if (alienCount == 6) {
-			alienCount = 0;
-			for (int i = 0; i < 4; i++) {
-				if (new Random().nextBoolean()) {
-					aliens.get(i).changeDirection();
-				}
+		if(GamePanel.currentState==GamePanel.GAME) {
+			alienCount += 1;
+			if (alienCount == 6) {
+				alienCount = 0;
+				for (int i = 0; i < 4; i++) {
+					if (new Random().nextBoolean()) {
+						aliens.get(i).changeDirection();
+					}
 
+				}
+			}
+
+			for (int i = 0; i < 4; i++) {
+				aliens.get(i).update();
 			}
 		}
-
-		for (int i = 0; i < 4; i++) {
-			aliens.get(i).update();
-		}
+		
 
 	}
 

@@ -11,6 +11,7 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -28,8 +29,8 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 	static int frameCount = 0;
 	public JLabel counter;
 	GamePanel(){
-		font= new Font("Fantasy",Font.BOLD,30);
-		scoreFont = new Font("Itemone",Font.BOLD,40);
+		font= new Font("Impact",Font.BOLD,30);
+		scoreFont = new Font("Impact",Font.BOLD,40);
 		frameDraw= new Timer(1000/30,this);
 		frameDraw.start();
 		pacMan= new Pac_Man(200,700,20,20);
@@ -80,16 +81,17 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.setColor(Color.ORANGE);
 		g.setFont(font);
 		g.drawString("PAC - MAN", 760, 215);
-		g.drawString("Press ENTER to play!",722 , 624);
+		g.drawString("Press ENTER to play!",700 , 444);
+		g.drawString("Press SPACE for instructions", 647,631);
 	}
 	void drawGameState(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, PacMan.WIDTH, PacMan.HEIGHT);
 	    object.draw(g);
 		pacMan.draw(g);
-		g.setColor(Color.BLUE);  
+		g.setColor(Color.WHITE);  
 		g.setFont(font);
-		g.drawString("Score: "+object.score, 865, 440);
+		g.drawString("Score: "+ObjectManager.score, 865, 440);
 		g.drawString("Lives: "+object.lives, 922, 900);
 	}
 	void drawLoseState(Graphics g) {
@@ -98,14 +100,16 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.setFont(font);
 		g.setColor(Color.BLACK);
 		g.drawString("YOU LOST!", 760, 215);
-		g.drawString("You scored "+object.score+" points", 697, 507);
+		g.drawString("You scored "+ObjectManager.score+" points", 697, 507);
 	}
 	void drawWinState(Graphics g) {
 		g.setColor(Color.GREEN);
 		g.fillRect(0, 0,PacMan.WIDTH, PacMan.HEIGHT);
 		g.setColor(Color.blue);
 		g.setFont(font);
-		g.drawString("Congratuations!",760,215);
+		g.drawString("Congratulations!",760,215);
+		g.drawString("Final Score: "+ObjectManager.score, 762, 349);
+		g.drawString("Lives Remaning: "+object.lives, 734, 520);
 		g.drawString("You got all of the coins and outlasted all of the aliens!", 468, 634);
 	}
 
@@ -124,6 +128,10 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 			
 			System.out.println("current state is : " + currentState);
 		}
+		if(arg0.getKeyCode()==KeyEvent.VK_SPACE&& currentState==MENU) {
+			JOptionPane.showMessageDialog(null, "3 lives. Get all of the coins and pellets to win the game. Kill aliens"
+					+ " when the pellet is active. Survive.");
+		}
 		if(arg0.getKeyCode()==KeyEvent.VK_UP) {
 			pacMan.setDirection(1);
 		}
@@ -136,6 +144,9 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		else if(arg0.getKeyCode()==KeyEvent.VK_LEFT) {
 			pacMan.setDirection(4);
 		}
+		if(arg0.getKeyCode()==KeyEvent.VK_W) {
+			currentState = WIN;
+		}
 		
 	}
 
@@ -143,6 +154,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		pacMan = new Pac_Man(200,700,20,20);	
 		ObjectManager.dotCount=0;
 		object = new ObjectManager(pacMan);
+		ObjectManager.powerPelletActive=false;
 	
 		
 	}
