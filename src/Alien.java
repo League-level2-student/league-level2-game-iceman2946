@@ -16,6 +16,7 @@ public class Alien extends GameObject {
 	int down =2;
 	int right = 3;
 	int left = 4; 
+	boolean powerPelletActive = false;
 	Alien(int x, int y, int width, int height,int row, int column) {
 		super(x, y, width, height);
 		this.speed=2;
@@ -45,6 +46,7 @@ public class Alien extends GameObject {
 		row = startingRow;
 		column= startingColumn;
 		inSpawn= true;
+		powerPelletActive=false;
 	}
 	void update() {
 		if(inSpawn == false) {

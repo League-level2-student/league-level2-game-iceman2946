@@ -61,7 +61,7 @@ public class Pac_Man extends GameObject {
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
-					ObjectManager.powerPelletActive=true;
+					ObjectManager.pelletActive();
 					if(	ObjectManager.colorSwitch.isRunning()) {
 						ObjectManager.colorSwitch.restart();
 					}
@@ -85,7 +85,7 @@ public class Pac_Man extends GameObject {
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
-					ObjectManager.powerPelletActive = true;
+					ObjectManager.pelletActive();
 					if(	ObjectManager.colorSwitch.isRunning()) {
 						ObjectManager.colorSwitch.restart();
 					}
@@ -108,7 +108,7 @@ public class Pac_Man extends GameObject {
 					ObjectManager.score+=20;
 					ObjectManager.dotCount-=1;
 					ObjectManager.tiles[row][column].tileType = 4;
-					ObjectManager.powerPelletActive = true;
+					ObjectManager.pelletActive();
 					if(	ObjectManager.colorSwitch.isRunning()) {
 						ObjectManager.colorSwitch.restart();
 					}
