@@ -34,6 +34,7 @@ public class Alien extends GameObject {
 	public void setColor(Color color) {
 		this.color = color;
 	}
+	
 	void changeDirection() {
 		int temp = randomDirection;
 		

@@ -35,7 +35,7 @@ public class Pac_Man extends GameObject {
 					ObjectManager.dotCount-=1;
 					ObjectManager.score+=20;
 					ObjectManager.tiles[row][column].tileType = 4;
-					ObjectManager.powerPelletActive=true;
+					ObjectManager.pelletActive();
 					if(	ObjectManager.colorSwitch.isRunning()) {
 						ObjectManager.colorSwitch.restart();
 					}
