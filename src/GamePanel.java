@@ -144,9 +144,6 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		else if(arg0.getKeyCode()==KeyEvent.VK_LEFT) {
 			pacMan.setDirection(4);
 		}
-		if(arg0.getKeyCode()==KeyEvent.VK_W) {
-			currentState = WIN;
-		}
 		
 	}
 
