@@ -189,7 +189,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println(e.getX()+" , "+e.getY());
+		//System.out.println(e.getX()+" , "+e.getY());
 		
 	}
 
