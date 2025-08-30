@@ -39,8 +39,8 @@ public class ObjectManager implements ActionListener {
 	int lives;  
 
 	ObjectManager(Pac_Man pacMan) {
-		System.out.println("Rows: tilesinCoding.length = " + tilesinCoding.length);
-		System.out.println("Cols: tilesinCoding[0].length = " + tilesinCoding[0].length);
+		//System.out.println("Rows: tilesinCoding.length = " + tilesinCoding.length);
+		//System.out.println("Cols: tilesinCoding[0].length = " + tilesinCoding[0].length);
 		this.pacMan = pacMan;
 		aliens = new ArrayList<Alien>();
 		addAliens();
