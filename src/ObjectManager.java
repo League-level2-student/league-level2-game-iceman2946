@@ -95,7 +95,7 @@ public class ObjectManager implements ActionListener {
 			}
 			if (aliens.get(i).powerPelletActive == true) {
 				changeAlienColor();
-			}
+			}	
 		}
 
 	} 
