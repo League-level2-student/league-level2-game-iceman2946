@@ -80,7 +80,8 @@ public class ObjectManager implements ActionListener {
 				aliens.get(i).setColor(Color.green);
 			} else if (i == 3) {
 				aliens.get(i).setColor(Color.pink);
-			}
+			} else if (i == 4) {
+				aliens.get(i).setColor(Color.orange);
 			if (aliens.get(i).powerPelletActive == true) {
 				changeAlienColor();
 			}
