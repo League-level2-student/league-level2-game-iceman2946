@@ -67,11 +67,15 @@ public class ObjectManager implements ActionListener {
 			aliens.add(new Alien(942, 457, 50, 50, 9, 17 + i));
 
 		}
+		for (int i = 0; i < 4; i++) {
+			aliens.add(new Alien(942, 457, 50, 50, 8, 17 + i));
+
+		}
 		setAlienColor();
 	}
 
 	void setAlienColor() {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < aliens.size(); i++) {
 			if (i == 0) {
 				aliens.get(i).setColor(Color.red);
 			} else if (i == 1) {
@@ -80,6 +84,14 @@ public class ObjectManager implements ActionListener {
 				aliens.get(i).setColor(Color.green);
 			} else if (i == 3) {
 				aliens.get(i).setColor(Color.pink);
+			}else if (i == 4) {
+				aliens.get(i).setColor(Color.orange);
+			} else if (i == 5) {
+				aliens.get(i).setColor(Color.gray.brighter());
+			} else if (i == 6) {
+				aliens.get(i).setColor(Color.magenta);
+			} else if (i == 7) {
+				aliens.get(i).setColor(new Color(33, 105, 45));
 			}
 			if (aliens.get(i).powerPelletActive == true) {
 				changeAlienColor();
@@ -95,7 +107,7 @@ public class ObjectManager implements ActionListener {
 			}
 		}
 
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < aliens.size(); i++) {
 			aliens.get(i).draw(g);
 		}
 		setAlienColor();
@@ -103,7 +115,7 @@ public class ObjectManager implements ActionListener {
 	}
 
 	void changeAlienColor() {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < aliens.size(); i++) {
 			aliens.get(i).setColor(Color.BLUE);
 		}
 		colorSwitch.start();
@@ -111,7 +123,7 @@ public class ObjectManager implements ActionListener {
 
 	void releaseAliens() {
 		if(GamePanel.currentState==GamePanel.GAME)	{
-			for (int i = 0; i < 4; i++) {
+			for (int i = aliens.size()-1; i >= 0; i--) {
 				if (aliens.get(i).inSpawn == true) {
 					aliens.get(i).inSpawn = false;
 					break;
@@ -120,18 +132,18 @@ public class ObjectManager implements ActionListener {
 		}
 	}
 	static void pelletActive() {
-		for(int i=0; i<4; i++) {
+		for(int i=0; i<aliens.size(); i++) {
 			aliens.get(i).powerPelletActive=true;
 		}
 		
 	}
 	void pelletInactive() {
-		for (int i=0; i<4; i++) {
+		for (int i=0; i<aliens.size(); i++) {
 			aliens.get(i).powerPelletActive=false;
 		}
 	}
 	void checkCollision() {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < aliens.size(); i++) {
 			if (aliens.get(i).row == pacMan.row && aliens.get(i).column == pacMan.column) {
 				if (aliens.get(i).color != Color.BLUE) {
 					gameOver();
@@ -213,7 +225,7 @@ public class ObjectManager implements ActionListener {
 		}
 		else {
 			pacMan.reset();
-			for (int i=0; i<4; i++) {
+			for (int i=0; i<aliens.size(); i++) {
 				aliens.get(i).reset();
 			}
 		}
@@ -239,7 +251,7 @@ public class ObjectManager implements ActionListener {
 			alienCount += 1;
 			if (alienCount == 6) {
 				alienCount = 0;
-				for (int i = 0; i < 4; i++) {
+				for (int i = 0; i < aliens.size(); i++) {
 					if (new Random().nextBoolean()) {
 						aliens.get(i).changeDirection();
 					}
@@ -247,7 +259,7 @@ public class ObjectManager implements ActionListener {
 				}
 			}
 
-			for (int i = 0; i < 4; i++) {
+			for (int i = 0; i < aliens.size(); i++) {
 				aliens.get(i).update();
 			}
 		}

@@ -37,11 +37,14 @@ public class Alien extends GameObject {
 	
 	void changeDirection() {
 		int temp = randomDirection;
+
 		
-	while(temp == randomDirection) {
-		randomDirection= (int)random.nextInt(4);
-	}
-	
+
+		while(temp == randomDirection) {
+			randomDirection= (int)random.nextInt(4);
+		}
+		
+
 	}
 	void reset() {
 		row = startingRow;
@@ -51,29 +54,34 @@ public class Alien extends GameObject {
 	}
 	void update() {
 		if(inSpawn == false) {
-			if(randomDirection==0 && row > 0 && (ObjectManager.tiles[row-1][column].tileType==0 || ObjectManager.tiles[row-1][column].tileType==3 || ObjectManager.tiles[row-1][column].tileType==4)) {
+			if(ObjectManager.tiles[row][column].tileType == 3) {
 				row--;
-			}
-			else if(randomDirection==0 && row > 0 && ObjectManager.tiles[row-1][column].tileType==1) {
-				changeDirection();
-			}
-			if(randomDirection==1 && row < ObjectManager.tiles.length-1 && (ObjectManager.tiles[row+1][column].tileType==0 || ObjectManager.tiles[row+1][column].tileType==4)) {
-				row++;
-		    }
-			else if(randomDirection==1 && row < ObjectManager.tiles.length-1 && ObjectManager.tiles[row+1][column].tileType==1) {
-				changeDirection();
-			}
-			if(randomDirection==2 && column > 0 && (ObjectManager.tiles[row][column-1].tileType==0|| ObjectManager.tiles[row][column-1].tileType==4)) {
-				column--;
-		    }
-			else if(randomDirection==2 && column > 0 && ObjectManager.tiles[row][column-1].tileType==1) {
-				changeDirection();
-			}
-			if(randomDirection==3 && column < ObjectManager.tiles[row].length-1 && (ObjectManager.tiles[row][column+1].tileType==0|| ObjectManager.tiles[row][column+1].tileType==4)) {
-				column++;
-		    }
-			else if(randomDirection==3 && column < ObjectManager.tiles[row].length-1 && ObjectManager.tiles[row][column+1].tileType==1) {
-				changeDirection();
+			}else {
+
+				if(randomDirection==0 && row > 0 && (ObjectManager.tiles[row-1][column].tileType==0 || ObjectManager.tiles[row-1][column].tileType==3 || ObjectManager.tiles[row-1][column].tileType==4)) {
+					row--;
+				}
+				else if(randomDirection==0 && row > 0 && ObjectManager.tiles[row-1][column].tileType==1) {
+					changeDirection();
+				}
+				if(randomDirection==1 && row < ObjectManager.tiles.length-1 && (ObjectManager.tiles[row+1][column].tileType==0 || ObjectManager.tiles[row+1][column].tileType==4)) {
+					row++;
+				}
+				else if(randomDirection==1 && row < ObjectManager.tiles.length-1 && ObjectManager.tiles[row+1][column].tileType==1) {
+					changeDirection();
+				}
+				if(randomDirection==2 && column > 0 && (ObjectManager.tiles[row][column-1].tileType==0|| ObjectManager.tiles[row][column-1].tileType==4)) {
+					column--;
+				}
+				else if(randomDirection==2 && column > 0 && ObjectManager.tiles[row][column-1].tileType==1) {
+					changeDirection();
+				}
+				if(randomDirection==3 && column < ObjectManager.tiles[row].length-1 && (ObjectManager.tiles[row][column+1].tileType==0|| ObjectManager.tiles[row][column+1].tileType==4)) {
+					column++;
+				}
+				else if(randomDirection==3 && column < ObjectManager.tiles[row].length-1 && ObjectManager.tiles[row][column+1].tileType==1) {
+					changeDirection();
+				}
 			}
 		}
 		super.update();
