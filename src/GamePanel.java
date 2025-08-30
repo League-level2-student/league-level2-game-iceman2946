@@ -127,7 +127,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 				resetGame();
 			}
 			
-			System.out.println("current state is : " + currentState);
+			//System.out.println("current state is : " + currentState);
 		}
 		if(arg0.getKeyCode()==KeyEvent.VK_SPACE&& currentState==MENU) {
 			JOptionPane.showMessageDialog(null, "3 lives. Get all of the coins and pellets to win the game. Kill aliens"
