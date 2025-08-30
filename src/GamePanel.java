@@ -100,7 +100,8 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		g.setFont(font);
 		g.setColor(Color.BLACK);
 		g.drawString("YOU LOST!", 760, 215);
-		g.drawString("You scored "+ObjectManager.score+" points", 697, 507);
+		g.drawString("You scored "+ObjectManager.score+" points", 700, 444);
+		g.drawString("Press ENTER to restart game", 647, 631);
 	}
 	void drawWinState(Graphics g) {
 		g.setColor(Color.GREEN);
@@ -130,7 +131,7 @@ public class GamePanel extends JPanel implements ActionListener,KeyListener,Mous
 		}
 		if(arg0.getKeyCode()==KeyEvent.VK_SPACE&& currentState==MENU) {
 			JOptionPane.showMessageDialog(null, "3 lives. Get all of the coins and pellets to win the game. Kill aliens"
-					+ " when the pellet is active. Survive.");
+					+ " when the pellet is active to get extra points. Survive.");
 		}
 		if(arg0.getKeyCode()==KeyEvent.VK_UP) {
 			pacMan.setDirection(1);
